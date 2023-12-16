@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: registry-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: registry-service
+  template:
+    metadata:
+      labels:
+        app: registry-service
+    spec:
+      containers:
+      - name: registry-service
+        image: youssefboutaleb/devops2023:registry-service-latest
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: registry-service
+spec:
+  selector:
+    app: registry-service
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
