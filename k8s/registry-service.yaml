@@ -16,7 +16,7 @@ spec:
       - name: registry-service
         image: youssefboutaleb/devops2023:registry-service-latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8888
 ---
 apiVersion: v1
 kind: Service
@@ -26,6 +26,6 @@ spec:
   selector:
     app: registry-service
   ports:
-  - protocol: TCP
-    port: 8080
-    targetPort: 8080
+    - protocol: TCP
+      port: 8888
+      targetPort: 8888
