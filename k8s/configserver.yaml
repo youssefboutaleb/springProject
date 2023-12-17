@@ -15,6 +15,7 @@ spec:
       containers:
       - name: config-server
         image: youssefboutaleb/devops2023:config-server-latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8888
 ---

@@ -15,6 +15,7 @@ spec:
       containers:
       - name: registry-service
         image: youssefboutaleb/devops2023:registry-service-latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8888
 ---
