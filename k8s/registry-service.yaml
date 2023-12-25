@@ -17,7 +17,7 @@ spec:
         image: youssefboutaleb/devops2023:registry-service-latest
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8888
+        - containerPort: 8761
 ---
 apiVersion: v1
 kind: Service
@@ -28,5 +28,5 @@ spec:
     app: registry-service
   ports:
     - protocol: TCP
-      port: 8888
-      targetPort: 8888
+      port: 8761
+      targetPort: 8761
